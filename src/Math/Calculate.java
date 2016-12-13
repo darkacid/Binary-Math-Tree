@@ -3,6 +3,16 @@ package Math;
 public class Calculate
 {
 
+	public static node constructTree(String str)
+	{
+		String command = "3 4 +";
+		for (int i=0;i<command.length();i++)
+		{
+			//if(command[i]==)
+			
+		}
+		return node;
+	}
 	public static double compute(String commands)
 	{
 		//

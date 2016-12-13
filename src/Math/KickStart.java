@@ -9,6 +9,9 @@ public class KickStart {
 		//The argument doesn't do anything yet.
 		//It will later accept some expression like "5*(1+2)".
 		Calculate.compute("1");
+		Postfix abc= new Postfix();
+		
+		System.out.println(abc.compute("3+4",0));
 		
 	}
 
