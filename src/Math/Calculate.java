@@ -11,6 +11,8 @@ public class Calculate
 			//if(command[i]==)
 			
 		}
+		node myNode = new node('*');
+		return myNode;
 	}
 	public static double compute(String commands)
 	{
