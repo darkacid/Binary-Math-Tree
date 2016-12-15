@@ -11,7 +11,6 @@ public class Calculate
 			//if(command[i]==)
 			
 		}
-		return node;
 	}
 	public static double compute(String commands)
 	{
