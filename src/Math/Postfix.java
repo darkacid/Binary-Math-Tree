@@ -9,19 +9,20 @@ public class Postfix
 {
 
 	    public String commands;
-	    private double x;
 	    //Main stack, holds the RPN notation for the commands string
 	    private Stack<Double> outputStack = new Stack<Double>();
 
 	    //temporary stack, holds the operators until the outputStack is filled
 	    private Stack<Character> opStack = new Stack<Character>();
 
-	    public String compute(String commandsP,double xP)
+	    public String compute(String commandsP)
 	    {
 
 	        commands=commandsP;
 	        boolean done=false;
-	        x=xP;
+
+
+
 
 	        //Creating outputStack which has RPN form of the string
 	        for (int i = 0; i < commands.length(); i++)
@@ -35,9 +36,6 @@ public class Postfix
 	            // If selected item is an operator
 	            else
 	            {
-
-	                if(commands.charAt(i)=='x'){outputStack.push(x);continue;}
-
 	                if (opStack.empty() == false)
 	                {
 	                    while (operationOrder(commands.charAt(i)) <= operationOrder(opStack.peek()))
@@ -63,7 +61,7 @@ public class Postfix
 	                            done=true;
 	                            break;
 	                        }
-	                        operationAction(opStack.pop());
+	                        //operationAction(opStack.pop());
 	                        if (opStack.empty())
 	                        {
 	                            opStack.push(commands.charAt(i));
@@ -78,6 +76,8 @@ public class Postfix
 	                    opStack.push(commands.charAt(i));
 	            }
 	        }
+
+			/*
 	        while (opStack.empty() == false)
 	        {
 	            if (operationOrder(opStack.peek()) != 0)
@@ -87,7 +87,8 @@ public class Postfix
 	                opStack.pop();
 	            }
 	        }
-
+			*/
+			System.out.println("end");
 	        commands=Double.toString(outputStack.pop());
 	        return commands;
 	    }
